@@ -1,0 +1,5 @@
+{
+    "algorithm" : "aes-256-ctr",
+    "password" : "ENTER_PASSWORD_HERE",
+    "secret" : "ENTER_SESSION_SECRET_HERE"
+}
