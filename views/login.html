@@ -11,18 +11,18 @@
     <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <style>
-    .input-field input[type=date]:focus+label,
-    .input-field input[type=text]:focus+label,
-    .input-field input[type=password]:focus+label {
-        color: #e91e63;
-    }
+        .input-field input[type=date]:focus+label,
+        .input-field input[type=text]:focus+label,
+        .input-field input[type=password]:focus+label {
+            color: #e91e63;
+        }
 
-    .input-field input[type=date]:focus,
-    .input-field input[type=text]:focus,
-    .input-field input[type=password]:focus {
-        border-bottom: 2px solid #e91e63;
-        box-shadow: none;
-    }
+        .input-field input[type=date]:focus,
+        .input-field input[type=text]:focus,
+        .input-field input[type=password]:focus {
+            border-bottom: 2px solid #e91e63;
+            box-shadow: none;
+        }
     </style>
 </head>
 
@@ -32,10 +32,16 @@
             <div class="nav-wrapper container">
                 <a href="/" class="brand-logo center">Vamos</a>
                 <ul class="left hide-on-med-and-down">
+                    <li><a href="/">Home</a></li>
                     <li><a href="#">About</a></li>
                 </ul>
 
                 <ul id="nav-mobile" class="side-nav">
+                    <li>
+                        <a href="#" id="sidelogo" class="brand-logo"><img class="center-align" src="./images/logo_transparent.png"></a>
+                    </li><br><br>
+                    <div class="divider"></div>
+                    <li><a href="/">Home</a></li>
                     <li><a href="#">About</a></li>
                 </ul>
                 <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -58,8 +64,8 @@
 
                         <div class='row'>
                             <div class='input-field col s12'>
-                              <input type='text' name='username' id='username' />
-                              <label for='username'>Enter your username</label>
+                                <input type='text' name='username' id='username' />
+                                <label for='username'>Enter your username</label>
                             </div>
                         </div>
 
