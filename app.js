@@ -54,10 +54,8 @@ app.use(require('express-session')({
     region: '',
     store: require('mongoose-session')(mongoose)
 }));
-app.set('port', process.env.PORT || 3001);
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'html');
-app.engine('html', ejs.renderFile);
+app.set('port', process.env.PORT || 3002);
+app.set('view engine', 'ejs');
 app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.json());
@@ -66,7 +64,7 @@ app.use(express.methodOverride());
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(app.router);
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(__dirname + '/public'));
 var sess;
 
 // development only
@@ -125,7 +123,7 @@ passport.use(new LocalStrategy(
 
 app.get('/admin', function(req, res, next) {
     if (req.user) {
-        res.sendfile('views/admin.html');
+      res.render('pages/admin', {page_name:"admin"});
     } else {
         res.redirect('/login');
     }
@@ -135,7 +133,7 @@ app.get('/login', function(req, res, next) {
     if (req.user) {
         res.redirect('/admin');
     } else {
-        res.sendfile('views/login.html');
+      res.render('pages/login', {page_name:"login", fail: false});
     }
 });
 
@@ -143,7 +141,7 @@ app.get('/loginfailed', function(req, res, next) {
     if (req.user) {
         res.redirect('/admin');
     } else {
-        res.sendfile('views/login_fail.html');
+      res.render('pages/login', {page_name:"login", fail: true});
     }
 });
 
@@ -154,16 +152,14 @@ app.get('/logout', function(req, res) {
 
 app.get('/', function(req, res, next) {
     sess = req.session;
-    res.sendfile('views/index.html');
+    res.render('pages/index', {page_name:"home"});
 });
 
 
 app.get('/results', function(req, res, next) {
     sess = req.session;
     if (req.session) {
-      ejs.renderFile('views/results.html', {city: req.session.city, region: req.session.region}, null, function(err, str){
-        res.send(str);
-    });
+      res.render('pages/results',  {page_name:"results", city: req.session.city, region: req.session.region});
     }
     else{
     res.redirect('/locate'); //Can fire before session is destroyed?
@@ -172,7 +168,7 @@ app.get('/results', function(req, res, next) {
 
 app.get('/locate', function(req, res, next) {
     sess = req.session;
-    res.sendfile('views/locate.html');
+    res.render('pages/locate', {page_name:"locate"});
 });
 
 app.post('/auth',

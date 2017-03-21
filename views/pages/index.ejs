@@ -2,38 +2,19 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
-    <title>Vamos - Let's Go Places!</title>
-
-    <!-- CSS  -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
-    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <% include ../partials/header %>
 </head>
 
 <body>
-    <header>
-        <nav class="green lighten-1" role="navigation">
-            <div class="nav-wrapper container">
-                <a href="#" class="brand-logo center">Vamos</a>
-                <ul class="left hide-on-med-and-down">
-                    <li><a href="#">About</a></li>
-                </ul>
-
-                <ul id="nav-mobile" class="side-nav">
-                  <li><a href="#" id="sidelogo" class="brand-logo"><img class="center-align" src="./images/logo_transparent.png"></a></li><br><br>
-                  <div class="divider"></div>
-                  <li><a href="#">About</a></li>
-                </ul>
-                <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-            </div>
-        </nav>
+        <header>
+            <% include ../partials/nav %>
+        </header>
+        <main>
         <div class="section no-pad-bot" id="index-banner">
             <div class="container">
                 <br><br>
                 <div class="row center">
-                  <img class="center-align" id="logoimg" src="./images/logo_transparent.png">
+                    <img class="center-align" id="logoimg" src="./images/logo_transparent.png">
                 </div>
                 <div class="row center">
                     <h5 class="header col s12 light">Let's Go Places!</h5>
@@ -45,8 +26,6 @@
 
             </div>
         </div>
-    </header>
-    <main>
 
         <div class="container">
             <div class="section">
@@ -89,15 +68,8 @@
             </div>
         </div>
     </main>
-
     <footer class="page-footer green">
-        <div class="container">
-        </div>
-        <div class="footer-copyright">
-            <div class="container">
-                Copyright 2017 - Vamos
-            </div>
-        </div>
+        <% include ../partials/footer %>
     </footer>
 
 

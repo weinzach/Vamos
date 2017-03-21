@@ -2,52 +2,14 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
-    <title>Vamos - Let's Go Places!</title>
-
-    <!-- CSS  -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
-    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
-    <style>
-        .input-field input[type=date]:focus+label,
-        .input-field input[type=text]:focus+label,
-        .input-field input[type=password]:focus+label {
-            color: #e91e63;
-        }
-
-        .input-field input[type=date]:focus,
-        .input-field input[type=text]:focus,
-        .input-field input[type=password]:focus {
-            border-bottom: 2px solid #e91e63;
-            box-shadow: none;
-        }
-    </style>
+    <% include ../partials/header %>
 </head>
 
 <body>
     <header>
-        <nav class="green lighten-1" role="navigation">
-            <div class="nav-wrapper container">
-                <a href="/" class="brand-logo center">Vamos</a>
-                <ul class="left hide-on-med-and-down">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="#">About</a></li>
-                </ul>
-
-                <ul id="nav-mobile" class="side-nav">
-                    <li>
-                        <a href="#" id="sidelogo" class="brand-logo"><img class="center-align" src="./images/logo_transparent.png"></a>
-                    </li><br><br>
-                    <div class="divider"></div>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="#">About</a></li>
-                </ul>
-                <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-            </div>
-        </nav>
+        <% include ../partials/nav %>
     </header>
+
     <main>
         <center>
             <div class="section"></div>
@@ -59,6 +21,9 @@
                     <form class="col s12" action="/auth" method="post">
                         <div class='row'>
                             <div class='col s12'>
+                                <% if (fail == true) { %>
+                                    <h6 class="red-text center">Login Failed!</h6>
+                                    <% } %>
                             </div>
                         </div>
 
@@ -91,14 +56,9 @@
         <div class="section"></div>
     </main>
 
-    <footer class="page-footer green ">
-        <div class="container ">
-        </div>
-        <div class="footer-copyright ">
-            <div class="container ">
-                Copyright 2017 - Vamos
-            </div>
-        </div>
+
+    <footer class="page-footer green">
+        <% include ../partials/footer %>
     </footer>
 
 

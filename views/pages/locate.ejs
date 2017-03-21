@@ -2,31 +2,20 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
-    <title>Vamos - Let's Go Places!</title>
-
-    <!-- CSS  -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
-    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <% include ../partials/header %>
 </head>
 
 <body>
-    <header>
-        <nav class="green lighten-1" role="navigation">
-            <div class="nav-wrapper container">
-              <a href="/" class="brand-logo center">Vamos</a>
-            </div>
-        </nav>
-    </header>
+  <header>
+      <% include ../partials/nav_nolinks %>
+  </header>
 
     <main>
         <div class="section no-pad-bot" id="index-banner">
             <div class="container">
                 <br><br>
                 <div class="row center">
-                  <img class="center-align" id="logoimg" src="./images/logo_transparent.png">
+                    <img class="center-align" id="logoimg" src="./images/logo_transparent.png">
                 </div>
                 <div class="row center">
                     <h5 class="header col s12 light">Locating...</h5>
@@ -52,14 +41,9 @@
         </div>
     </main>
 
-    <footer class="page-footer green ">
-        <div class="container ">
-        </div>
-        <div class="footer-copyright ">
-            <div class="container ">
-                Copyright 2017 - Vamos
-            </div>
-        </div>
+
+    <footer class="page-footer green">
+        <% include ../partials/footer %>
     </footer>
 
 
