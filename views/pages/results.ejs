@@ -10,37 +10,51 @@
         <% include ../partials/nav %>
     </header>
     <main>
-        <div class="section no-pad-bot" id="index-banner">
-            <div class="container">
-                <br><br>
-                <div class="row center">
-                    <h1 class="header center orange-green">Results for:</h1>
-                </div>
-                <div class="row center">
-                    <h5 class="header col s12 light"> <%- city %>, <%- region %></h5>
-                </div>
-                <div class="row center">
-                    <p>None</p>
-                    <a href="/" class="waves-effect waves-light btn">Back to Home</a>
-                </div>
-                <br><br>
+        <div id="index-banner" class="result-banner">
+          <div class="container">
+              <br><br><br><br>
+              <div class="row center">
+                  <h2 class="header center white-text orange-green">Here's whats around...</h2>
+              </div>
+              <div class="row center">
+                  <h5 class="header col white-text s12 light"> <%- city %>, <%- region %></h5>
+              </div
+              <br><br><br><br>
+          </div>
+        </div>
 
+        <div class="container">
+            <div class="section">
+
+                <!--  Button Section   -->
+                <div class="row center">
+                  <a id ="resturant-btn" class="waves-effect waves-light btn result-button indigo" href="#"><i class="material-icons left">local_dining</i>Resturants</a><br><br>
+                  <a id ="attractions-btn" class="waves-effect waves-light btn result-button indigo" href="#"><i class="material-icons left">local_play</i>Attractions</a><br><br>
+                  <a id ="hotels-btn" class="waves-effect waves-light btn result-button indigo" href="#"><i class="material-icons left">hotel</i>Hotels</a><br><br>
+                  <a id ="coffee-btn" class="waves-effect waves-light btn result-button indigo" href="#"><i class="material-icons left">local_cafe</i>Coffee Shops</a><br><br>
+                  <a id ="beauty-btn" class="waves-effect waves-light btn result-button indigo" href="#"><i class="material-icons left">local_florists</i>Beauty and Spas</a><br><br>
+                </div>
+
+            </div>
+            <br><br>
+
+            <div class="section">
             </div>
         </div>
     </main>
-
-
     <footer class="page-footer green">
         <% include ../partials/footer %>
     </footer>
 
 
     <!--  Scripts-->
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js "></script>
-    <script src="js/materialize.js "></script>
-    <script src="js/init.js "></script>
-    <script type="text/javascript " src="./js/socket.io.js "></script>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+    <script>
+    var city = "<%- city %>";
+    </script>
+    <script src="js/results.js"></script>
 
 </body>
-
-</html>

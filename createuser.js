@@ -35,14 +35,9 @@ mongoose.connect('mongodb://localhost/Vamos');
 
 //User Schema
 var Schema = mongoose.Schema;
-var UserDetail = new Schema({
-    username: String,
-    password: String,
-    type: String
-}, {
-    collection: 'userInfo'
-});
-var UserDetails = mongoose.model('userInfo', UserDetail);
+
+var UserDetails = require("./items").UserDetails;
+
 
 //Prompt User and Enter into MongoDb
 function prompt(question, callback) {

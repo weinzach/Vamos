@@ -6,7 +6,7 @@
                 <li <% if (page_name=='home' ) { %>class="active"
                     <% } %> ><a href="/">Home</a></li>
                 <li <% if (page_name=='about' ) { %>class="active"
-                    <% } %> ><a href="#">About</a></li>
+                    <% } %> ><a href="/about">About</a></li>
                 <% if (page_name == 'admin') { %>
                     <li><a href="/logout">Logout</a></li>
                     <% } %>
@@ -14,21 +14,21 @@
           </div>
             <ul class="right valign-wrapper hide-on-med-and-down">
                 <li>
-                    <a href="#!">
-                        <img src="./images/vamosnav.png" alt="" class="valign circle responsive-img">
+                    <a href="http://159.203.93.15:3002/results">
+                        <img src="http://159.203.93.15:3002/images/vamosnav.png" alt="" class="valign circle responsive-img">
                     </a>
                 </li>
             </ul>
 
         <ul id="nav-mobile" class="side-nav">
             <li>
-                <a href="#" id="sidelogo" class="brand-logo"><img class="center-align" src="./images/logo_transparent.png"></a>
+                <a href="#" id="sidelogo" class="brand-logo"><img class="center-align" src="http://159.203.93.15:3002/images/logo_transparent.png"></a>
             </li><br><br>
             <div class="divider"></div>
             <li <% if (page_name=='home' ) { %>class="active"
                 <% } %> ><a href="/">Home</a></li>
             <li <% if (page_name=='about' ) { %>class="active"
-                <% } %> ><a href="#">About</a></li>
+                <% } %> ><a href="/about">About</a></li>
             <% if (page_name == 'admin') { %>
                 <li><a href="/logout">Logout</a></li>
                 <% } %>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../../partials/header %>
+</head>
+
+<body>
+    <header>
+        <% include ../../partials/nav %>
+    </header>
+    <main>
+        <div id="index-banner" class="hotel-banner">
+          <div class="container">
+              <br><br><br><br>
+              <div class="row center">
+                  <h2 class="header center white-text orange-green">Hotels in</h2>
+              </div>
+              <div class="row center">
+                  <h5 class="header col white-text s12 light"> <%- city %>, <%- region %></h5>
+              </div
+              <br><br><br><br>
+          </div>
+        </div>
+
+        <div class="container">
+            <div class="section">
+              <div class="row center">
+                <h3>None</h3>
+              </div>
+              <div class="row center">
+                <a class="waves-effect waves-light btn result-button indigo" href="#" onclick="window.history.back();">Go Back</a><br><br>
+              </div>
+
+            </div>
+            <br><br>
+
+            <div class="section">
+            </div>
+        </div>
+    </main>
+    <footer class="page-footer green">
+        <% include ../../partials/footer %>
+    </footer>
+
+
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
+    <script src="http://159.203.93.15:3002/js/materialize.js"></script>
+    <script src="http://159.203.93.15:3002/js/init.js"></script>
+    <script>
+    var city = "<%- city %>";
+    </script>
+
+</body>

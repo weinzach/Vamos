@@ -45,6 +45,8 @@ mongoose.connection.on('error', function(err) {
 mongoose.connect('mongodb://localhost/Vamos');
 var Schema = mongoose.Schema;
 
+var UserDetails = require("./items").UserDetails;
+
 // all environments
 var app = express();
 app.use(require('express-session')({
@@ -71,18 +73,6 @@ var sess;
 if ('development' == app.get('env')) {
     app.use(express.errorHandler());
 }
-
-//User Schema
-var UserDetail = new Schema({
-    username: String,
-    password: String,
-    type: String
-}, {
-    collection: 'userInfo'
-});
-
-//Create MongoDB models
-var UserDetails = mongoose.model('userInfo', UserDetail);
 
 //Handle User Sessions
 passport.serializeUser(function(user, done) {
@@ -155,6 +145,11 @@ app.get('/', function(req, res, next) {
     res.render('pages/index', {page_name:"home"});
 });
 
+app.get('/about', function(req, res, next) {
+    sess = req.session;
+    res.render('pages/about', {page_name:"about"});
+});
+
 
 app.get('/results', function(req, res, next) {
     sess = req.session;
@@ -169,6 +164,36 @@ app.get('/results', function(req, res, next) {
 app.get('/locate', function(req, res, next) {
     sess = req.session;
     res.render('pages/locate', {page_name:"locate"});
+});
+
+
+app.get('/app/:city/:type', function(req, res, next) {
+  sess = req.session;
+  if (req.session) {
+    console.log( req.params.city);
+    console.log( req.params.type);
+    if(req.params.type=="resturants"){
+    res.render('pages/app/resturants',  {page_name:"resturants", city: req.session.city, region: req.session.region});
+    }
+    else if(req.params.type=="attractions"){
+    res.render('pages/app/attractions',  {page_name:"attractions", city: req.session.city, region: req.session.region});
+    }
+    else if(req.params.type=="hotels"){
+    res.render('pages/app/hotels',  {page_name:"hotels", city: req.session.city, region: req.session.region});
+    }
+    else if(req.params.type=="coffee"){
+    res.render('pages/app/coffee',  {page_name:"coffee", city: req.session.city, region: req.session.region});
+    }
+    else if(req.params.type=="beauty"){
+    res.render('pages/app/beauty',  {page_name:"beauty", city: req.session.city, region: req.session.region});
+    }
+    else{
+      res.redirect('/locate'); //Can fire before session is destroyed?
+    }
+  }
+  else{
+  res.redirect('/locate'); //Can fire before session is destroyed?
+  }
 });
 
 app.post('/auth',
@@ -199,7 +224,7 @@ socketio.listen(server).on('connection', function(socket) {
     console.log("User Connected!");
     //Function to handle setCity requests
     socket.on('setCity', function(msg) {
-        let data = msg.split(",");
+        var data = msg.split(",");
         console.log('Location Received: ', msg);
     });
 });
