@@ -44,39 +44,8 @@ ul.side-nav {
     background-position: center center;              /* optional, center the image */
 }
 
-.resturant-banner{
-    background-image: url('http://159.203.93.15:3002/images/resturant.jpg');
-    background-size:     cover;                      /* <------ */
-    background-repeat:   no-repeat;
-    background-position: center center;              /* optional, center the image */
-}
-
-
-.attraction-banner{
-    background-image: url('http://159.203.93.15:3002/images/attractions.jpg');
-    background-size:     cover;                      /* <------ */
-    background-repeat:   no-repeat;
-    background-position: center center;              /* optional, center the image */
-}
-
-
-.hotel-banner{
-    background-image: url('http://159.203.93.15:3002/images/hotel.jpg');
-    background-size:     cover;                      /* <------ */
-    background-repeat:   no-repeat;
-    background-position: center center;              /* optional, center the image */
-}
-
-.coffee-banner{
-    background-image: url('http://159.203.93.15:3002/images/coffee.png');
-    background-size:     cover;                      /* <------ */
-    background-repeat:   no-repeat;
-    background-position: center center;              /* optional, center the image */
-}
-
-
-.beauty-banner{
-    background-image: url('http://159.203.93.15:3002/images/spa.jpg');
+.type-banner{
+    background-color: #303f9f ;
     background-size:     cover;                      /* <------ */
     background-repeat:   no-repeat;
     background-position: center center;              /* optional, center the image */
